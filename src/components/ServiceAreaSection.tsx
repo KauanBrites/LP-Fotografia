@@ -1,10 +1,10 @@
-import { MapPin } from "lucide-react";
+import { MapPin, Building2, Building, Landmark, Map } from "lucide-react";
 
 const cities = [
-  { name: "Ponta Porã", highlight: true, icon: "🏙️" },
-  { name: "Dourados", highlight: false, icon: "🌆" },
-  { name: "Campo Grande", highlight: false, icon: "🏢" },
-  { name: "Região", highlight: false, icon: "📍" },
+  { name: "Ponta Porã", highlight: true, icon: Building2 },
+  { name: "Dourados", highlight: false, icon: Building },
+  { name: "Campo Grande", highlight: false, icon: Landmark },
+  { name: "Região", highlight: false, icon: Map },
 ];
 
 export function ServiceAreaSection() {
@@ -31,8 +31,8 @@ export function ServiceAreaSection() {
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">
-                {city.icon}
+              <div className="mb-2 group-hover:scale-110 transition-transform duration-300">
+                <city.icon className="w-10 h-10 text-primary" />
               </div>
               <MapPin
                 className={`w-6 h-6 mb-1 ${
@@ -55,7 +55,7 @@ export function ServiceAreaSection() {
         
         <div className="text-center mt-8">
           <p className="text-muted-foreground text-sm md:text-base">
-            📞 Entre em contato e confirme o atendimento na sua cidade!
+            Entre em contato e confirme o atendimento na sua cidade!
           </p>
         </div>
       </div>
