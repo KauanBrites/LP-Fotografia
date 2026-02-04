@@ -126,6 +126,15 @@
   .container {
     contain: layout style;
   }
+
+  /* Portfolio section optimizations */
+  #portfolio {
+    contain: layout style paint;
+  }
+
+  #portfolio .group {
+    transform: translateZ(0);
+  }
 }
 
 @layer components {
@@ -155,7 +164,7 @@
   }
 
   .section-dark {
-    background: var(--gradient-dark);
+    background: hsl(20 14% 8%);
   }
 }
 

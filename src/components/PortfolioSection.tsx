@@ -75,19 +75,22 @@ export function PortfolioSection() {
           {portfolioItems.map((item, index) => (
             <div
               key={item.title}
-              className="group relative overflow-hidden rounded-2xl aspect-square card-glow"
+              className="group relative overflow-hidden rounded-2xl aspect-square bg-card border border-border/50"
+              style={{ willChange: 'transform' }}
             >
               <img
                 src={item.image}
                 alt={item.alt}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-0 md:group-hover:opacity-100 md:opacity-0 opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 translate-y-0 md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-300">
-                <h3 className="font-display text-lg md:text-xl mb-1">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-200">
+                <h3 className="font-display text-lg md:text-xl mb-1 text-white">
                   {item.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-gray-300 text-sm">
                   {item.description}
                 </p>
               </div>
