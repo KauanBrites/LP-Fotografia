@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { NavLink } from "@/components/NavLink";
 
 const WHATSAPP_LINK = "https://wa.me/5567992522270?text=Olá, quero fotos profissionais para meu negócio";
 
@@ -17,23 +18,23 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 border-b border-border">
       <div className="container flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
-        <a href="#inicio" className="font-display text-2xl md:text-3xl text-gradient">
+        <NavLink href="#inicio" className="font-display text-2xl md:text-3xl text-gradient">
           MK Produções
-        </a>
+        </NavLink>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
           {navItems.map((item) => (
-            <a
+            <NavLink
               key={item.href}
               href={item.href}
               className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
               {item.label}
-            </a>
+            </NavLink>
           ))}
         </nav>
 
@@ -62,17 +63,17 @@ export function Header() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <nav className="lg:hidden bg-background border-b border-border animate-fade-in">
+        <nav className="lg:hidden bg-background border-b border-border">
           <div className="container py-4 flex flex-col gap-4">
             {navItems.map((item) => (
-              <a
+              <NavLink
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
                 className="text-base font-medium text-muted-foreground hover:text-primary transition-colors py-2"
               >
                 {item.label}
-              </a>
+              </NavLink>
             ))}
             <Button
               asChild

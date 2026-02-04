@@ -65,10 +65,9 @@ export function BenefitsSection() {
           {benefits.map((benefit, index) => (
             <div
               key={benefit.title}
-              className="group p-6 md:p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group p-6 md:p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-colors duration-200"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors duration-200">
                 <benefit.icon className="w-6 h-6 text-primary" />
               </div>
               <h3 className="font-display text-xl md:text-2xl mb-3">

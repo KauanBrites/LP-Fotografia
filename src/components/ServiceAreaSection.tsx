@@ -24,14 +24,13 @@ export function ServiceAreaSection() {
           {cities.map((city, index) => (
             <div
               key={city.name}
-              className={`group relative overflow-hidden flex flex-col items-center gap-3 px-6 py-8 rounded-2xl border transition-all duration-300 hover:scale-105 hover:shadow-xl ${
+              className={`group relative overflow-hidden flex flex-col items-center gap-3 px-6 py-8 rounded-2xl border transition-colors duration-200 hover:shadow-lg ${
                 city.highlight
                   ? "bg-gradient-to-br from-primary/20 to-primary/5 border-primary shadow-lg shadow-primary/20"
                   : "bg-card border-border hover:border-primary/50 hover:bg-primary/5"
               }`}
-              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="mb-2 group-hover:scale-110 transition-transform duration-300">
+              <div className="mb-2">
                 <city.icon className="w-10 h-10 text-primary" />
               </div>
               <MapPin
